@@ -25,7 +25,7 @@ function addAbilitiesTable(){
         + `</div>`;
     trackHTML += `</div>`;
 
-    $('#trackList').html(trackHTML);
+    $('#abilityList').html(trackHTML);
 }
 
 });
