@@ -17,14 +17,14 @@
 <h1 style="text-align: center">D&D 3.5 Character Sheet</h1>
 <div class="container">
     <div class="row">
-        <div class="col-4 d-inline-block">Character name:<input type="text" name="cName"></div>
+        <div class="col-4 d-inline-block">Character name:<input type="text" name="cName" required></div>
         <div class="col-6 d-inline-block">Player name:<input type="text" name="pName"></div>
     </div>
     <div class="row">
-        <div class="col-2 d-inline-block">Class:<select class="form-control"></select></div>
-        <div class="col-2 d-inline-block">Level:<input type="text" name="level"></div>
-        <div class="col-2 d-inline-block">Race:<input type="text" name="race"></div>
-        <div class="col-2 d-inline-block">Alignment:<input type="text" name="alignment"></div>
+        <div class="col-2 d-inline-block">Class:<select class="form-control" required><option>Bard</option></select></div>
+        <div class="col-2 d-inline-block">Level:<input type="text" name="level" required></div>
+        <div class="col-2 d-inline-block">Race:<select class="form-control" required></select></div>
+        <div class="col-2 d-inline-block">Alignment:<select class="form-control" required></select> </div>
         <div class="col-2 d-inline-block">Deity:<input type="text" name="deity"></div>
     </div>
     <div class="row">
@@ -44,6 +44,11 @@
         <div class="col-1 d-inline-block"><label>Ability modifier:</label></div>
         <div class="col-1 d-inline-block"><label>Temporary score:</label></div>
         <div class="col-1 d-inline-block"><label>Temporary modifier:</label></div>
+        <div class="col-1 d-inline-block"><label></label></div>
+        <div class="col-1 d-inline-block"><label>Total:</label></div>
+        <div class="col-3 d-inline-block"><label>Wounds/Current HP:</label></div>
+        <div class="col-1 d-inline-block"><label>Nonlethal damage:</label></div>
+        <div class="col-1 d-inline-block"><label>Speed:</label></div>
     </div>
 
     <div class="row">
@@ -52,6 +57,11 @@
         <div class="col-1 d-inline-block"><input type="text" name="str_am"></div>
         <div class="col-1 d-inline-block"><input type="text" name="str_ts"></div>
         <div class="col-1 d-inline-block"><input type="text" name="str_tm"></div>
+        <div class="col-1 d-inline-block"><label>HP:</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="hp"></div>
+        <div class="col-3 d-inline-block"><input type="text" name="wounds"></div>
+        <div class="col-1 d-inline-block"><input type="text" name="nld"></div>
+        <div class="col-1 d-inline-block"><input type="text" name="speed"></div>
     </div>
 
     <div class="row">
@@ -60,6 +70,17 @@
         <div class="col-1 d-inline-block"><input type="text" name="dex_am"></div>
         <div class="col-1 d-inline-block"><input type="text" name="dex_ts"></div>
         <div class="col-1 d-inline-block"><input type="text" name="dex_tm"></div>
+        <div class="col-1 d-inline-block"><label>AC:</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ac"></div>
+        <div class="col-1 d-inline-block"><label>=10+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+        <div class="col-1 d-inline-block"><input type="text" name="ab"><label>+</label></div>
+
+
     </div>
 
     <div class="row">
