@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ADND_CharacterGenerator" />
+        <module name="ADND_CharacterGenerator_Master" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ADND_CharacterGenerator" target="1.7" />
+      <module name="ADND_CharacterGenerator_Master" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

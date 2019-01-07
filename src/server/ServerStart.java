@@ -10,7 +10,7 @@ public class ServerStart {
 
     public static void main(String[] args) {
 
-        DatabaseConnection.open("MessageBoard.db");
+        DatabaseConnection.open("ADND35.db");
 
         ResourceConfig config = new ResourceConfig();
         config.packages("server");
