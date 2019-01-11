@@ -39,7 +39,17 @@ function resetNewUserForm() {
     });
 }
 
+function socialMediaLogin() {
+    const socialMediaForm = $('#socialMedia');
+
+    socialMediaForm.submit(event => {
+        console.log("Media login button clicked");
+
+    });
+}
+
 function pageLoad() {
     resetLoginForm();
     resetNewUserForm();
+    socialMediaLogin();
 }
