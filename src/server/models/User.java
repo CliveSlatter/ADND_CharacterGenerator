@@ -33,13 +33,17 @@ public class User {
 
     private int id;
     private String username;
+    private String firstName;
+    private String lastName;
     private int salt;
     private String hash;
     private String sessionToken;
 
-    public User(int id, String username, int salt, String hash, String sessionToken) {
+    public User(int id, String username, String firstName, String lastName, int salt, String hash, String sessionToken) {
         this.id = id;
         this.username = username;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.salt = salt;
         this.hash = hash;
         this.sessionToken = sessionToken;
@@ -59,6 +63,22 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public int getSalt() {

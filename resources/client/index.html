@@ -10,44 +10,46 @@
     <script src="/client/js/js.cookie.min.js"></script>
     <link href="/client/css/bootstrap.min.css" rel="stylesheet">
     <link href="/client/css/custom.css" rel="stylesheet">
+    <script src="/client/js/character.js"></script>
 
 </head>
-<body onload="pageLoad();">
+<body>
 
 <h1 style="text-align: center">D&D 3.5 Character Sheet</h1>
 
 <div class="container">
     <div class="row">
-        <div class="col-5 d-inline-block">Character name:<input type="text" name="cName" required class="form-control">
+        <div class="col-5 d-inline-block">Character name:<input type="text" id="cName" required class="form-control">
         </div>
-        <div class="col-5 d-inline-block">Player name:<input type="text" name="pName" class="form-control"></div>
+        <div class="col-5 d-inline-block">Player name:<input type="text" id="pName" class="form-control"></div>
     </div>
 
     <div class="row">
         <div class="col-2 d-inline-block">Class:<select class="form-control" required>
             <option>Bard</option>
         </select></div>
-        <div class="col-2 d-inline-block">Level:<input type="text" name="level" required class="form-control"></div>
+        <div class="col-2 d-inline-block">Level:<input type="text" id="level" required class="form-control"></div>
         <div class="col-2 d-inline-block">Race:<select class="form-control" required></select></div>
         <div class="col-2 d-inline-block">Alignment:<select class="form-control" required></select></div>
-        <div class="col-2 d-inline-block">Deity:<input type="text" name="deity" class="form-control"></div>
+        <div class="col-2 d-inline-block">Deity:<input type="text" id="deity" class="form-control"></div>
     </div>
 
     <div class="row">
-        <div class="col-1 d-inline-block">Size:<input type="text" name="size" class="form-control"></div>
-        <div class="col-1 d-inline-block">Age:<input type="text" name="age" class="form-control"></div>
-        <div class="col-1 d-inline-block">Gender:<input type="text" name="gender" class="form-control"></div>
-        <div class="col-1 d-inline-block">Height:<input type="text" name="height" class="form-control"></div>
-        <div class="col-1 d-inline-block">Weight:<input type="text" name="weight" class="form-control"></div>
-        <div class="col-1 d-inline-block">Eyes:<input type="text" name="eyes" class="form-control"></div>
-        <div class="col-2 d-inline-block">Hair:<input type="text" name="hair" class="form-control"></div>
-        <div class="col-2 d-inline-block">Skin:<input type="text" name="skin" class="form-control"></div>
+        <div class="col-1 d-inline-block">Size:<input type="text" id="size" class="form-control"></div>
+        <div class="col-1 d-inline-block">Age:<input type="text" id="age" class="form-control"></div>
+        <div class="col-1 d-inline-block">Gender:<input type="text" id="gender" class="form-control"></div>
+        <div class="col-1 d-inline-block">Height:<input type="text" id="height" class="form-control"></div>
+        <div class="col-1 d-inline-block">Weight:<input type="text" id="weight" class="form-control"></div>
+        <div class="col-1 d-inline-block">Eyes:<input type="text" id="eyes" class="form-control"></div>
+        <div class="col-2 d-inline-block">Hair:<input type="text" id="hair" class="form-control"></div>
+        <div class="col-2 d-inline-block">Skin:<input type="text" id="skin" class="form-control"></div>
     </div>
+</div>
 
-
+<div class="container">
     <div class="row">
         <div class="col-6">
-            <form class="form-group">
+            <form id="abilities" class="form-group">
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>Ability name:</label></div>
                     <div class="col-2 d-inline-block"><label>Ability score:</label></div>
@@ -58,51 +60,53 @@
 
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>STR:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="str_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="str_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="str_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="str_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="str_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="str_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="str_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="str_tm" class="form-control"></div>
                 </div>
 
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>DEX:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="dex_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="dex_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="dex_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="dex_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="dex_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="dex_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="dex_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="dex_tm" class="form-control"></div>
                 </div>
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>CON:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="con_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="con_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="con_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="con_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="con_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="con_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="con_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="con_tm" class="form-control"></div>
                 </div>
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>INT:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="int_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="int_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="int_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="int_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="int_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="int_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="int_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="int_tm" class="form-control"></div>
                 </div>
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>WIS:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="wis_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="wis_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="wis_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="wis_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="wis_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="wis_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="wis_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="wis_tm" class="form-control"></div>
                 </div>
                 <div class="row">
                     <div class="col-2 d-inline-block"><label>CHA:</label></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="cha_as" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="cha_am" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="cha_ts" class="form-control"></div>
-                    <div class="col-2 d-inline-block"><input type="text" name="cha_tm" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="cha_as" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="cha_am" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="cha_ts" class="form-control"></div>
+                    <div class="col-2 d-inline-block"><input type="text" id="cha_tm" class="form-control"></div>
                 </div>
             </form>
             <div class="row">
                 <div class="col-10">
-                    <button class="btn btn-success float-right">Generate Ability Scores</button>
+                    <button onclick="GenerateAbilityScores();" class="btn btn-success float-right">Generate Ability
+                        Scores
+                    </button>
                 </div>
             </div>
 
@@ -120,22 +124,34 @@
 
         </div>
 
-        <div class="col-6">
+        <div class="col-12">
             <div class="row">
                 <div class="col-12"><label class="form-control">SKILLS</label></div>
             </div>
             <div class="row">
-                <div class="col-2"><label class="form-control">SKILL NAME</label></div>
-                <div class="col-2"><label class="form-control">Key Ability</label></div>
-                <div class="col-2"><label class="form-control">Skill Modifier</label></div>
-                <div class="col-2"><label class="form-control">Ability Modifier</label></div>
-                <div class="col-2"><label class="form-control">Ranks</label></div>
-                <div class="col-2"><label class="form-control">Misc Modifier</label></div>
+                <div class="col-4">
+                    <div class="col-4"><label class="form-control">SKILL NAME</label></div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-2 d-inline-block"><label class="form-control">Key Ability</label></div>
+                        <div class="col-2 d-inline-block"><label class="form-control">Skill Modifier</label></div>
+                        <div class="col-2 d-inline-block"><label class="form-control">Ability Modifier</label></div>
+                        <div class="col-2 d-inline-block"><label class="form-control">Ability Ranks</label></div>
+                        <div class="col-2 d-inline-block"><label class="form-control">Misc Modifier</label></div>
+                    </div>
+                </div>
             </div>
 
 
         </div>
     </div>
+</div>
+
+</div>
+
+<div class="container">
+
 </div>
 
 

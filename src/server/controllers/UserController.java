@@ -18,6 +18,8 @@ public class UserController {
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.TEXT_PLAIN)
     public String newMessage(@FormParam("username") String username,
+                             @FormParam("firstName") String firstName,
+                             @FormParam("lastName") String lastName,
                              @FormParam("password") String password1,
                              @FormParam("password2") String password2) {
         Console.log("/user/new - Creating " + username);
@@ -34,7 +36,7 @@ public class UserController {
         int userId = User.nextId();
         int salt = (int) (Math.random() * 8999999) + 1000000;
         String hash = User.GenerateHash(password1, salt);
-        String success = UserService.insert(new User(userId, username, salt, hash, token));
+        String success = UserService.insert(new User(userId, username, firstName, lastName, salt, hash, token));
         if (success.equals("OK")) {
             return token;
         } else {

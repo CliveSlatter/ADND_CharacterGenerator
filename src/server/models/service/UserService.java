@@ -33,13 +33,13 @@ public class UserService {
         targetList.clear();
         try {
             PreparedStatement statement = DatabaseConnection.newStatement(
-                    "SELECT Id, Username, salt, hash, SessionToken FROM User"
+                    "SELECT Id, Username, firstName, lastName, salt, hash, SessionToken FROM User"
             );
             if (statement != null) {
                 ResultSet results = statement.executeQuery();
                 if (results != null) {
                     while (results.next()) {
-                        targetList.add(new User(results.getInt("Id"), results.getString("Username"), results.getInt("Salt"), results.getString("hash"), results.getString("SessionToken")));
+                        targetList.add(new User(results.getInt("Id"), results.getString("Username"), results.getString("firstName"), results.getString("lastName"), results.getInt("Salt"), results.getString("hash"), results.getString("SessionToken")));
 
 
                     }
@@ -64,7 +64,7 @@ public class UserService {
                 statement.setInt(1, id);
                 ResultSet results = statement.executeQuery();
                 if (results != null && results.next()) {
-                    result = new User(results.getInt("Id"), results.getString("Username"), results.getInt("Salt"), results.getString("hash"), results.getString("SessionToken"));
+                    result = new User(results.getInt("Id"), results.getString("Username"), results.getString("firstName"), results.getString("lastName"), results.getInt("Salt"), results.getString("hash"), results.getString("SessionToken"));
 
 
                 }
@@ -80,13 +80,15 @@ public class UserService {
     public static String insert(User itemToSave) {
         try {
             PreparedStatement statement = DatabaseConnection.newStatement(
-                    "INSERT INTO User (Id, Username, Salt, Hash, SessionToken) VALUES (?, ?, ?, ?, ?)"
+                    "INSERT INTO User (Id, Username, firstName, lastName, Salt, Hash, SessionToken) VALUES (?, ?, ?, ?, ?, ?, ?)"
             );
             statement.setInt(1, itemToSave.getId());
             statement.setString(2, itemToSave.getUsername());
-            statement.setInt(3, itemToSave.getSalt());
-            statement.setString(4, itemToSave.getHash());
-            statement.setString(5, itemToSave.getSessionToken());
+            statement.setString(3, itemToSave.getFirstName());
+            statement.setString(4, itemToSave.getLastName());
+            statement.setInt(5, itemToSave.getSalt());
+            statement.setString(6, itemToSave.getHash());
+            statement.setString(7, itemToSave.getSessionToken());
             statement.executeUpdate();
             return "OK";
         } catch (SQLException resultsException) {
