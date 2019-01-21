@@ -10,8 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import static org.apache.log4j.NDC.get;
-
 public class UserService {
 
     public static String validateSessionCookie(Cookie sessionCookie) {
@@ -60,7 +58,7 @@ public class UserService {
         User result = null;
         try {
             PreparedStatement statement = DatabaseConnection.newStatement(
-                    "SELECT Id, Username, firstName, lastName, salt, hash, SessionToken FROM Users WHERE Id = ?"
+                    "SELECT Id, Username, salt, hash, SessionToken FROM Users WHERE Id = ?"
             );
             if (statement != null) {
                 statement.setInt(1, id);
@@ -82,7 +80,7 @@ public class UserService {
     public static String insert(User itemToSave) {
         try {
             PreparedStatement statement = DatabaseConnection.newStatement(
-                    "INSERT INTO User (Id, Username, firstName, lastName,Salt, Hash, SessionToken) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                    "INSERT INTO User (Id, Username, firstName, lastName, Salt, Hash, SessionToken) VALUES (?, ?, ?, ?, ?, ?, ?)"
             );
             statement.setInt(1, itemToSave.getId());
             statement.setString(2, itemToSave.getUsername());

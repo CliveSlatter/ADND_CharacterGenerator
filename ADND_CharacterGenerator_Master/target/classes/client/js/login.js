@@ -12,7 +12,7 @@ function resetLoginForm() {
                     alert(response);
                 } else {
                     Cookies.set("sessionToken", response);
-                    window.location.href = "../index.html";
+                    window.location.href = "../client/index.html";
                 }
             }
         });
@@ -32,7 +32,7 @@ function resetNewUserForm() {
                     alert(response);
                 } else {
                     Cookies.set("sessionToken", response);
-                    window.location.href = "../index.html";
+                    window.location.href = "../client/index.html";
                 }
             }
         });
