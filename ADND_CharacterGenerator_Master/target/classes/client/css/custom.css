@@ -1,0 +1,16 @@
+
+.input {
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+}
+
+.row-striped:nth-of-type(odd){
+    background-color: #171a1d;
+    color: #9fcdff;
+}
+
+.row-striped:nth-of-type(even){
+    background-color: #6c757d;
+    color: #0c0c0c;
+}
